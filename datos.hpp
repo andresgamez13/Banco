@@ -3,6 +3,7 @@
 
 #include<iostream>
 #include<string>
+#include<vector>
 using namespace std;
 
 struct Info{
@@ -25,15 +26,20 @@ private:
     Info * paciente;
     int count;
     int capacity;
-    
+
     string mayusculas(string cadena);
+    int partition(vector<Info*>& v,int left,int right);
+    void quikci(vector<Info*>& v,int left,int right);
+    void quicksort(vector<Info*>& v);
 public:
     Datos(){paciente=nullptr, count = 0;}
     int tamano();
     void eliminar();
-    Info encontrar();
+    //Info encontrar();
     void insertar(string ident, string nom1, string nom2, string ape1, string ape2, string nac, string sexo, string rh, double dist);
     void ver_pacientes();
+    string search_info(int i);
+    void busqueda(string R);
 };
 
 
